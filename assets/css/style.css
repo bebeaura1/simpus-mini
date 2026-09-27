@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* ===== Header & Navbar (Flexbox) ===== */
@@ -55,10 +55,10 @@ header nav a:hover {
     text-decoration: none;
 }
 
-a.active {
-    background-color: #6b1414;
-    color: #fff;
-    font-weight: 600;
+header nav a.active {
+    background-color: #6b1414 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
 }
 
 /* ===== Main Layout ===== */
@@ -226,11 +226,7 @@ footer {
     overflow-x: auto;
 }
 
-/* ===== Hamburger Menu (checkbox hack) ===== */
-.nav-toggle {
-    display: none;
-}
-
+/* ===== Hamburger Menu (JS-driven) ===== */
 .nav-toggle-label {
     display: none;
     font-size: 1.6rem;
@@ -238,6 +234,24 @@ footer {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+/* ===== Flash Message ===== */
+.flash {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
 /* ===== Pesan Error Validasi ===== */
@@ -259,6 +273,34 @@ footer {
     padding: 0.5rem 0.75rem;
     border: 1px solid #dacdcd;
     border-radius: 4px;
+}
+
+/* untuk pencarian dan tombol tambah */
+.table-action {
+    display: flex;
+    align-items: center; /* biar sejajar dengan input */
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+/* tombol tambah */
+.tambah {
+    background-color: #8a1d1d;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem; /* Ukuran tombol agar pas dipandang */
+    border-radius: 6px; /* Sudut melengkung halus */
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    height: max-content;
+}
+
+.tambah:hover {
+    background-color: #4b0000;  /* Warna sedikit lebih gelap saat di-hover */
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* ===== Responsive Breakpoints ===== */
