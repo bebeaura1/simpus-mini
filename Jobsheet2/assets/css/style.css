@@ -18,7 +18,8 @@ a {
 }
 
 a:hover {
-    text-decoration: none;
+    text-decoration: underline;
+    color: #de918c;
 }
 
 /* ===== Header & Navbar (Flexbox) ===== */
@@ -45,20 +46,6 @@ header nav ul {
 header nav a {
     color: #fff;
     font-weight: 500;
-    display: block; /* biar background memenuhi kotak */
-    padding: 0.5rem 0.85rem; /* gede kotaknya */
-    border-radius: 6px; /* lengkungkan sudut kotak menu */
-}
-
-header nav a:hover {
-    background-color: #6b1414;
-    text-decoration: none;
-}
-
-header nav a.active {
-    background-color: #6b1414 !important;
-    color: #fff !important;
-    font-weight: 600 !important;
 }
 
 /* ===== Main Layout ===== */
@@ -85,9 +72,9 @@ section h2 {
 }
 
 /* ===== Kartu Statistik (CSS Grid) ===== */
-main section:nth-of-type(2) { 
+main section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /*laptop : 3*/
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
@@ -130,7 +117,6 @@ th, td {
     text-align: left;
     padding: 0.65rem 0.75rem;
     border-bottom: 1px solid #eae2e2;
-    white-space: nowrap; /* bikin jadi lurus 1 baris */
 }
 
 thead {
@@ -182,7 +168,7 @@ form label {
     display: block;
     margin-bottom: 0.35rem;
     font-weight: 600;
-    color: #373737;
+    color: #444;
 }
 
 form input,
@@ -219,131 +205,4 @@ footer {
     padding: 1.25rem;
     color: #947a7a;
     font-size: 0.9rem;
-}
-
-/* ===== Tabel Responsif ===== */
-.table-responsive {
-    overflow-x: auto;
-}
-
-/* ===== Hamburger Menu (JS-driven) ===== */
-.nav-toggle-label {
-    display: none;
-    font-size: 1.6rem;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* ===== Flash Message ===== */
-.flash {
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.flash-success {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-.flash-error {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-/* ===== Pesan Error Validasi ===== */
-.error {
-    display: block;
-    color: #d9534f;
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
-}
-
-/* ===== Kolom Pencarian ===== */
-.search-box {
-    margin-bottom: 1rem;
-}
-
-.search-box input {
-    width: 100%;
-    max-width: 320px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #dacdcd;
-    border-radius: 4px;
-}
-
-/* untuk pencarian dan tombol tambah */
-.table-action {
-    display: flex;
-    align-items: center; /* biar sejajar dengan input */
-    gap: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-/* tombol tambah */
-.tambah {
-    background-color: #8a1d1d;
-    color: #ffffff;
-    padding: 0.5rem 1.25rem; /* Ukuran tombol agar pas dipandang */
-    border-radius: 6px; /* Sudut melengkung halus */
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
-    height: max-content;
-}
-
-.tambah:hover {
-    background-color: #4b0000;  /* Warna sedikit lebih gelap saat di-hover */
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* ===== Responsive Breakpoints ===== */
-
-/* Tablet ke bawah */
-@media (max-width: 768px) {
-    main section:nth-of-type(2) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    header {
-        position: relative;
-    }
-
-    .nav-toggle-label {
-        display: block;
-    }
-
-    header nav {
-        display: none;
-        width: 100%;
-        order: 3;
-        margin-top: 1rem;
-    }
-
-    header nav.nav-open {
-        display: block;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    main section:nth-of-type(2) {
-        grid-template-columns: 1fr;
-    }
-
-    form input,
-    form select {
-        max-width: 100%;
-    }
 }
