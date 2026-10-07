@@ -1,0 +1,408 @@
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #750101;
+    background-color: #f8f5f5;
+    line-height: 1.5;
+}
+
+a {
+    color: #8b1010;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* ===== Header & Navbar (Flexbox) ===== */
+header {
+    background-color: #8a1d1d;
+    color: #fff;
+    padding: 1rem 1.5rem; /* padding dalam margin luar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.4rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+header nav a {
+    color: #fff;
+    font-weight: 500;
+    display: block; /* biar background memenuhi kotak */
+    padding: 0.5rem 0.85rem; /* gede kotaknya */
+    border-radius: 6px; /* lengkungkan sudut kotak menu */
+}
+
+header nav a:hover {
+    background-color: #6b1414;
+    text-decoration: none;
+}
+
+header nav a.active {
+    background-color: #6b1414 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+
+/* ===== Main Layout ===== */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 10px; /* ngatur sudut di kotak*/
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #6f0000;
+    border-left: 5px solid #450505;
+    padding-left: 10px;
+    line-height: 1.5;
+}
+
+/* ===== Kartu Statistik (CSS Grid) ===== */
+main section:nth-of-type(2) { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*laptop : 3*/
+    gap: 1rem;
+}
+
+main section:nth-of-type(2) h2 {
+    grid-column: 1 / -1;
+}
+
+main section:nth-of-type(2) article {
+    background-color: #faeeee;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: 0s;
+}
+
+main section:nth-of-type(2) article:hover {
+    transform: translateY(2px);
+    box-shadow: 0 1px 10px rgba(147, 66, 66, 0.327);
+}
+
+main section:nth-of-type(2) article h3 {
+    font-size: 0.95rem;
+    color: #540505;
+    margin-bottom: 0.5rem;
+}
+
+main section:nth-of-type(2) article p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #8a1d1d;
+}
+
+/* ===== Tabel ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #eae2e2;
+    white-space: nowrap; /* bikin jadi lurus 1 baris */
+}
+
+thead {
+    background-color: #8a1d1d;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fbf7f7;
+}
+
+tbody tr:hover {
+    background-color: #faeeee;
+}
+
+td button {
+    padding: 0.35rem 0.7rem;
+    margin-right: 0.35rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+td button:first-of-type {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+td button:first-of-type:hover {
+    background-color: #d06b00;
+}
+
+td button:last-of-type {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+td button:last-of-type:hover {
+    background-color: #920500;
+}
+
+/* tambahan js9 172-218 */
+td a.btn-edit {
+    display: inline-block;
+    padding: 0.35rem 0.7rem;
+    margin-right: 0.35rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    background-color: rgba(252, 232, 209, 0.703);
+}
+
+td a.btn-edit:hover {
+    background-color: rgba(255, 217, 81, 0.715);
+}
+
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.pagination a {
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    color: #8a1d1d;
+}
+
+.pagination a:hover {
+    background-color: rgb(248, 239, 239);
+}
+
+.pagination a.active {
+    background-color: #8a1d1d;
+    color: #fff;
+    border-color: #8a221d;
+}
+
+/* pencarian jg */
+.search-box form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.search-box button {
+    padding: 0.55rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #1d5b8a;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+td form.form-hapus {
+    display: inline;
+}
+
+/* ===== Form ===== */
+form p {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #373737;
+}
+
+form input,
+form select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid #dacdcd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+br {
+    display: none;
+}
+
+form button[type="submit"] {
+    background-color: #8a1d1d;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #450505;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    color: #947a7a;
+    font-size: 0.9rem;
+}
+
+/* ===== Tabel Responsif ===== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* ===== Hamburger Menu (JS-driven) ===== */
+.nav-toggle-label {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Flash Message ===== */
+.flash {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* ===== Pesan Error Validasi ===== */
+.error {
+    display: block;
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* ===== Kolom Pencarian ===== */
+.search-box {
+    margin-bottom: 1rem;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #dacdcd;
+    border-radius: 4px;
+}
+
+/* untuk pencarian dan tombol tambah */
+.table-action {
+    display: flex;
+    align-items: center; /* biar sejajar dengan input */
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* otomatis turun ke bawah */
+}
+
+/* tombol tambah */
+.tambah {
+    background-color: #8a1d1d;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem; /* Ukuran tombol agar pas dipandang */
+    border-radius: 6px; /* Sudut melengkung halus */
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    height: max-content;
+}
+
+.tambah:hover {
+    background-color: #4b0000;  /* Warna sedikit lebih gelap saat di-hover */
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Tablet ke bawah */
+@media (max-width: 768px) {
+    main section:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    header nav.nav-open {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    form input,
+    form select {
+        max-width: 100%;
+    }
+}
