@@ -61,6 +61,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                         <th>Aksi</th>
                     </tr>
                 </thead>
+                <tbody>
                 <?php if (empty($daftarAnggota)): ?>
                     <tr>
                         <td colspan="5">Tidak ada data anggota yang cocok.</td>
