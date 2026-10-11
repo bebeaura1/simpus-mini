@@ -43,14 +43,16 @@ header nav ul {
 }
 
 header nav a {
-    color: #fff;
-    font-weight: 500;
+    color: #ffffffc9;
+    font-weight: 400;
     display: block; /* biar background memenuhi kotak */
     padding: 0.5rem 0.85rem; /* gede kotaknya */
     border-radius: 6px; /* lengkungkan sudut kotak menu */
 }
 
 header nav a:hover {
+    color: white;
+    font-weight: 600;
     background: linear-gradient(#881616, #ab2727);
     text-decoration: none;
 }
@@ -80,7 +82,7 @@ header nav ul li.nav-user {
     /* text-decoration: underline; */
 }
 
-span {
+.auth-status span {
     display: none;
 }
 
@@ -327,6 +329,10 @@ footer {
     cursor: pointer;
 }
 
+.nav-toggle-label:hover {
+    color: #ffbdbd;
+}
+
 /* ===== Flash Message ===== */
 .flash {
     padding: 0.75rem 1rem;
@@ -403,7 +409,7 @@ footer {
     }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
      header {
         position: relative;
         flex-wrap: wrap;
@@ -429,7 +435,7 @@ footer {
         gap: 0.75rem;
     }
 
-    span {
+    .auth-status span {
         display: inline;
         font-family: Inter;
     }

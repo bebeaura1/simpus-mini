@@ -30,14 +30,17 @@ $daftarAktif = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo e($flash['pesan']); ?></p>
             <?php endif; ?>
 
-            <div class="search-box">
-                <form method="get" action="kembali.php">
-                    <span>
-                        <label for="search-input">Cari anggota/buku</label><br>
-                        <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Nama anggota atau judul buku...">
-                    </span>
-                    <button type="submit">Cari</button>
-                </form>
+            <div class="table-action">
+                <div class="search-box" style="margin-bottom: 0; flex: 1;">
+                    <form method="get" action="kembali.php">
+                        <span>
+                            <label for="search-input">Cari anggota/buku</label><br>
+                            <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Nama anggota atau judul buku...">
+                        </span>
+                        <button type="submit">Cari</button>
+                    </form>
+                </div>
+                <a href="tambah.php" class="tambah">+ Tambah</a>
             </div>
 
             <div class="table-responsive">

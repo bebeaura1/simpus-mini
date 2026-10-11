@@ -17,23 +17,23 @@ unset($_SESSION['flash']);
                 <?php echo csrf_field(); ?>
                 <p>
                     <label for="judul">Judul</label><br>
-                    <input type="text" id="judul" name="judul" required>
+                    <input type="text" id="judul" name="judul" required placeholder="Masukkan judul buku...">
                 </p>
                 <p>
                     <label for="pengarang">Pengarang</label><br>
-                    <input type="text" id="pengarang" name="pengarang" required>
+                    <input type="text" id="pengarang" name="pengarang" required placeholder="Masukkan pengarang...">
                 </p>
                 <p>
                     <label for="tahun">Tahun Terbit</label><br>
-                    <input type="number" id="tahun" name="tahun" min="1900" max="2026" required>
+                    <input type="number" id="tahun" name="tahun" min="1900" max="2026" required placeholder="Masukkan tahun terbit...">
                 </p>
                 <p>
                     <label for="isbn">ISBN</label><br>
-                    <input type="text" id="isbn" name="isbn">
+                    <input type="text" id="isbn" name="isbn" placeholder="Masukkan ISBN...">
                 </p>
                 <p>
                     <label for="stok">Stok</label><br>
-                    <input type="number" id="stok" name="stok" min="0" required>
+                    <input type="number" id="stok" name="stok" min="0" required placeholder="Masukkan stok...">
                 </p>
                 <p>
                     <label for="kategori">Kategori</label><br>
